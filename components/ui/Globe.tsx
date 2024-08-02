@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
@@ -96,6 +97,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       _buildData();
       _buildMaterial();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeRef.current]);
 
   const _buildMaterial = () => {
@@ -162,6 +164,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         });
       startAnimation();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeData]);
 
   const startAnimation = () => {
@@ -221,6 +224,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     return () => {
       clearInterval(interval);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeRef.current, globeData]);
 
   return (
