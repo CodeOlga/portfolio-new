@@ -4,6 +4,7 @@ import { projects } from '@/data'
 import React from 'react'
 import { PinContainer } from './ui/Pin'
 import { FaLocationArrow } from 'react-icons/fa'
+import Link from 'next/link'
 
 const RecentProjects = () => {
   return (
@@ -18,6 +19,7 @@ const RecentProjects = () => {
             key={id}
             className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
             <PinContainer title={link} href={link}>
+              <Link href={link} target='_blank'>
               <div className='relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10'>
                 <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
                   <img src="/bg.png" alt="bg-img" />
@@ -43,7 +45,8 @@ const RecentProjects = () => {
                   <p className='flex lg:text-xl md:text-xs text-sm text-purple'>Check Live Site</p>
                   <FaLocationArrow className='ms-3' color='#cbacf9'/>
                 </div>
-              </div>     
+                </div>   
+              </Link>  
             </PinContainer>
           </div>
         ))}
