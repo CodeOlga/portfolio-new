@@ -97,7 +97,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       _buildData();
       _buildMaterial();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeRef.current]);
 
   const _buildMaterial = () => {
@@ -164,7 +164,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         });
       startAnimation();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeData]);
 
   const startAnimation = () => {
@@ -189,8 +189,12 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .arcDashAnimateTime((e) => defaultProps.arcTime);
 
     globeRef.current
-      .pointsData(data)
-      .pointColor((e) => (e as { color: string }).color)
+      // .pointsData(data)
+      // .pointColor((e) => (e as { color: string }).color)
+      .pointsData(globeData)
+      .pointColor((e: any) =>
+        typeof e.color === "function" ? e.color(0) : e.color
+      )
       .pointsMerge(true)
       .pointAltitude(0.0)
       .pointRadius(2);
@@ -224,7 +228,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     return () => {
       clearInterval(interval);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeRef.current, globeData]);
 
   return (
