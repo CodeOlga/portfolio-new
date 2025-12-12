@@ -3,7 +3,7 @@ import React from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
-import { div } from "three/webgpu";
+// import { div } from "three/webgpu";
 
 const Approach = () => {
   return (
@@ -14,7 +14,7 @@ const Approach = () => {
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card
           title="Planning & Strategy"
-          icon={<AceternityIcon order='Phase 1' />}
+          icon={<AceternityIcon order="Phase 1" />}
           description="We'll collaborate to map out your website's goals, target audience, 
           and key functionalities. We'll discuss things like site structure, 
           navigation, and content requirements."
@@ -26,11 +26,10 @@ const Approach = () => {
         </Card>
         <Card
           title="Development & Progress Update"
-          icon={<AceternityIcon order='Phase 2' />}
+          icon={<AceternityIcon order="Phase 2" />}
           description="Once we agree on the plan, I cue my lofi playlist and dive into
             coding. From initial sketches to polished code, I keep you updated
             every step of the way."
-
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -41,7 +40,6 @@ const Approach = () => {
               // [232, 121, 249],
               [255, 166, 158],
               [221, 255, 247],
-
             ]}
             dotSize={2}
           />
@@ -50,7 +48,7 @@ const Approach = () => {
         </Card>
         <Card
           title="Development & Launch"
-          icon={<AceternityIcon order='Phase 3' />}
+          icon={<AceternityIcon order="Phase 3" />}
           description="This is where the magic happens! Based on the approved design, 
             I'll translate everything into functional code, building your website
             from the ground up."
@@ -64,7 +62,7 @@ const Approach = () => {
       </div>
     </section>
   );
-}
+};
 
 const Card = ({
   title,
@@ -73,9 +71,9 @@ const Card = ({
   children,
 }: {
   title: string;
-    icon: React.ReactNode;
-    description: string;
-    children?: React.ReactNode;
+  icon: React.ReactNode;
+  description: string;
+  children?: React.ReactNode;
 }) => {
   const [hovered, setHovered] = React.useState(false);
   return (
@@ -115,7 +113,10 @@ const Card = ({
         <h2 className="dark:text-white text-3xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center">
           {title}
         </h2>
-        <h2 className="text-sm dark:text-white opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center" style={{ color: '#e4ecff'}}>
+        <h2
+          className="text-sm dark:text-white opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center"
+          style={{ color: "#e4ecff" }}
+        >
           {description}
         </h2>
       </div>
